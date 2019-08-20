@@ -31,6 +31,7 @@
 |image|string|null: true|
 |group_id|integer|foreign_key: true|
 |user_id|integer|foreign_key: true|
+
 ### Association
 - belongs_to :user
 - belongs_to :group
