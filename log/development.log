@@ -1,0 +1,7 @@
+Started GET "/" for ::1 at 2019-08-24 14:29:51 +0900
+Processing by MessagesController#index as HTML
+  Rendering messages/index.haml within layouts/application
+  Rendered messages/index.haml within layouts/application (18.5ms)
+Completed 200 OK in 499ms (Views: 486.3ms | ActiveRecord: 0.0ms)
+
+
