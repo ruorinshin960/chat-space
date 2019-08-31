@@ -1,0 +1,20 @@
+.header-bar
+ .bar グループを作成しました
+%section.message
+ .side_bar
+  = render "message"
+ .chat
+  .header
+   .header-left
+    .header-left__title sample
+    .header-left__members Member : name
+   .header-right__edi Edit
+  .messages
+   .messages__members name
+   .messages__timestamp
+   .messages__chat hello!!
+  .form 
+   = text_field :content, '',class: 'form__message', placeholder: 'type a message'
+   .form__mask
+    = fa_icon 'picture-o', class: 'icon'
+   .form__send Send
