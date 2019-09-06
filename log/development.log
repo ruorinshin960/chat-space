@@ -15417,6 +15417,7 @@ Processing by GroupsController#index as HTML
 Completed 200 OK in 58ms (Views: 52.0ms | ActiveRecord: 1.3ms)
 
 
+
 Started GET "/groups/new" for ::1 at 2019-09-06 23:10:50 +0900
 Processing by GroupsController#new as HTML
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
@@ -15510,5 +15511,6 @@ Processing by GroupsController#index as HTML
   Rendered groups/index.html.haml within layouts/application (173.3ms)
   Rendered layouts/_notifications.html.haml (1.3ms)
 Completed 200 OK in 1253ms (Views: 1085.1ms | ActiveRecord: 140.3ms)
+
 
 
