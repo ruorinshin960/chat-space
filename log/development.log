@@ -15316,6 +15316,7 @@ Processing by GroupsController#index as HTML
 Completed 200 OK in 35ms (Views: 31.2ms | ActiveRecord: 0.6ms)
 
 
+
   [1m[35m (0.2ms)[0m  [1m[34mSELECT DATABASE() as db[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8445024276154775190', 0);[0m
   [1m[36mActiveRecord::SchemaMigration Load (48.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
@@ -15496,5 +15497,6 @@ Processing by GroupsController#index as HTML
   Rendered groups/index.html.haml within layouts/application (9.2ms)
   Rendered layouts/_notifications.html.haml (1.5ms)
 Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 0.7ms)
+
 
 
