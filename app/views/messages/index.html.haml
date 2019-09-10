@@ -1,19 +1,21 @@
 .header-bar
 %section.message
- .side_bar
-  = render "message"
- .chat
-  .header
-   .header-left
-    .header-left__title sample
-    .header-left__members Member : name
-   .header-right__edi Edit
-  .messages
-   .messages__members name
-   .messages__timestamp
-   .messages__chat hello!!
-  .form 
-   = text_field :content, '',class: 'form__message', placeholder: 'type a message'
-   .form__mask
-    = fa_icon 'picture-o', class: 'icon'
-   .form__send Send
+  .side_bar
+    = render "side-bar"
+  .chat
+    .header
+      .header-left
+        .header-left__title sample
+        .header-left__members Member : name
+      .header-right__edi 
+        = link_to "Edit", edit_group_path(@group)
+    .messages
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'

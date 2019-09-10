@@ -48,24 +48,24 @@
     box-sizing: border-box;
     height: 100px;
     padding: 0 40px;
-   }
   }
+}
 
 .header-left{
+  display: inline-block;
+  &__title{
   float: left;
-  }
-
-.header-left__title{
   color: #333;
   font-size: 20px;
   margin-top: 35px;
- }
-
- .header-left__members{
+  margin-bottom: 15px;
+  }
+  &__members{
   color: #999;
   font-size: 12px;
   margin-top: 15px
- }
+   }
+}
 
 .header-right__edi{
   border: 1px solid #38AEF0;
@@ -141,7 +141,7 @@
   }
 }
 
-.form__send{
+.form__submit{
    line-height: 50px;
     background-color: #38AEF0;
     border: none;
