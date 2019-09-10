@@ -1,7 +1,8 @@
 .header-bar
 %section.message
   .side_bar
-    = render "message"
+group-message-view
+    = render "side-bar"
   .chat
     .header
       .header-left
@@ -10,9 +11,8 @@
       .header-right__edi 
         = link_to "Edit", edit_group_path(@group)
     .messages
-      .messages__members name
-      .messages__timestamp
-      .messages__chat hello!!
+　　　group-message-view
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
