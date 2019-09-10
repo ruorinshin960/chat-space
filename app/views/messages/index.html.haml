@@ -1,7 +1,6 @@
 .header-bar
 %section.message
   .side_bar
-group-message-view
     = render "side-bar"
   .chat
     .header
@@ -11,7 +10,6 @@ group-message-view
       .header-right__edi 
         = link_to "Edit", edit_group_path(@group)
     .messages
-　　　group-message-view
       = render @messages
     .form
       = form_for [@group, @message] do |f|
