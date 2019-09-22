@@ -1,23 +1,36 @@
 $(function() {
 
   function buildHTML(message){
-
-    var html = `<div class="messages__members ">
-                  ${ message.user_name }
+    var content = message.content ? `${ message.content }` : "";
+    var img = message.image ? `<img src= ${ message.image }>` : "";
+    var html = `<div class="message">
+                <div class="message__upper">
+                <div class="messages__members">
+                  ${message.user_name}
                 </div>
                 <div class="messages__timestamp">
-                  ${ message.time }
+                  <a>
+                  ${message.date}
+                  </a>
+                </div>
                 </div>
                 <div class="messages__chat ">
                   <p class="message__content">
-                    ${ message.content }
+                    <div>
+                      ${content}
+                    </div>
+                    ${img}
                   </p>
                 </div>`;
         return html;
     }
 
     function scroll() {
-      $('.messages').animate({scrollTop: $('.message')[0].scrollHeight});
+      var target = $('.message').last();
+      var position = target.offset().top + $('.messages').scrollTop();
+    $('.messages').animate({
+      scrollTop: position
+    }, 300, 'swing');
   }
 
   $('#new_message').on('submit', function(e) {
@@ -37,13 +50,13 @@ $(function() {
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.form__mask').val('');
+      $('.form__message').val('');
       $('.form__submit').prop('disabled', false);
       scroll()
     })
     .fail(function(){
       alert('error')
       $('.form__submit').prop('disabled', false);
-   })
+    })
   })
 })
