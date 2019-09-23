@@ -5,6 +5,8 @@ public/uploads/*
 
 # Ignore all logfiles and tempfiles.
 log/*
+tmp/*
+log/**/*
 tmp/**/*
 
 # Ignore Byebug command history file.
