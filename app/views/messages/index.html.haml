@@ -5,8 +5,12 @@
   .chat
     .header
       .header-left
-        .header-left__title sample
-        .header-left__members Member : name
+        .header-left__title 
+          = @group.name
+        .header-left__members 
+        -@group.users.each do |user|
+          .each-member 
+            = user.name
       .header-right__edi 
         = link_to "Edit", edit_group_path(@group)
     .messages
