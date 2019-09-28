@@ -7,10 +7,9 @@
       .header-left
         .header-left__title 
           = @group.name
-        .header-left__members 
-        -@group.users.each do |user|
-          .each-member 
-            = user.name
+        .header-left__each-member
+          -@group.group_users.each do |group_user| 
+            = group_user.user.name
       .header-right__edi 
         = link_to "Edit", edit_group_path(@group)
     .messages
