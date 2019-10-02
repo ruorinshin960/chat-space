@@ -24,37 +24,7 @@ $(function() {
                 </div>`;
         return html;
     }
-
-    // 自動更新機能
-  var buildMessageHTML = function(message) {
-    if (message.content && message.image.url) {
-      //data-idが反映されるようにしている
-      var html = `<div class="message" data-message-id="${message.id}">' 
-                    <div class="upper-message">
-                    <div class="message__members">
-                      ${message.user_name}
-                    </div>
-                    </div>
-                    <a class="message__timestamp">
-                      ${message.date}
-                    </a>
-                  </div>`
-    } else if (message.content) {
-      var html = `<div class="message__chat ">
-                   <p class="message__content">
-                     ${message.content}
-                   </p>
-                   </div>
-                  </div>`
-    } else if (message.image.url) {
-      var html = `<div class="message__chat ">
-                    ${image}
-                  </div>
-                  </div>`
-    };
-    return html;
-  };
-
+  
     function scroll() {
       var target = $('.message').last();
       var position = target.offset().top + $('.messages').scrollTop();
@@ -120,7 +90,7 @@ $(function() {
       })
     
     .fail(function() {
-      console.log('error');
+      alert('error')
     });
    }
   };
