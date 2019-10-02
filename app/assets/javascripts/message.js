@@ -3,7 +3,7 @@ $(function() {
   function buildHTML(message){
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${message.id}">
                 <div class="message__upper">
                 <div class="messages__members">
                   ${message.user_name}
@@ -24,7 +24,7 @@ $(function() {
                 </div>`;
         return html;
     }
-
+  
     function scroll() {
       var target = $('.message').last();
       var position = target.offset().top + $('.messages').scrollTop();
@@ -32,6 +32,8 @@ $(function() {
       scrollTop: position
     }, 300, 'swing');
   }
+
+  //インクリメンタルサーチ
 
   $('#new_message').on('submit', function(e) {
      e.preventDefault();
@@ -59,4 +61,38 @@ $(function() {
       $('.form__submit').prop('disabled', false);
     })
   })
-})
+
+  // 自動更新機能
+
+  var reloadMessages = function() {
+
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      var last_message_id = $('.message:last').data(data-id);
+    $.ajax({
+      //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
+      url:'/api/messages',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      //追加するHTMLの入れ物を作る
+      var insertHTML = '';
+      //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+      messages.forEach(function (message){
+      //メッセージが入ったHTMLを取得
+      insertHTML = buildHTML(message); 
+      //メッセージを追加
+      $('.messages').append(insertHTML);
+    })
+
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+      })
+    
+    .fail(function() {
+      alert('error')
+    });
+   }
+  };
+  setInterval(reloadMessages, 5000);
+});
