@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'ruorinshin'
-  config.asset_host = 'https://ap-northeast-1.amazonaws.com/ruorinshin'
+  config.asset_host = 'https://ruorinshin.ap-northeast-1.amazonaws.com'
 end
