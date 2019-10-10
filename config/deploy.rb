@@ -36,10 +36,10 @@ set :default_env, {
 set :linked_files, %w{ config/secrets.yml }
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
-after 'deploy:publishing', 'deploy:start'
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:start'
+    invoke 'unicorn:restart'
   end
 
   desc 'upload secrets.yml'
