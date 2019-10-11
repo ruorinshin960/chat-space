@@ -30,17 +30,14 @@ $(function() {
     search_list.append(html);
   }
 
-  $(document).on('turbolinks:load', function(){ 
-    $(document).on("keyup", "#user-search-field",function(e) {
-      e.preventDefault();
+  $(function(){
+    $("#user-search-field").on("keyup", function() {
       var input = $(this).val();
 
       $.ajax({
         type: 'GET',
         url: '/users',
         data: { keyword: input },
-        processData: false, 
-        contentType: false,
         dataType: 'json'
       })
 
