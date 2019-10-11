@@ -105,3 +105,144 @@ li {
     }
   }
 }
+
+.groups{
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  padding: 20px 20px 40px;
+  box-sizing: border-box;
+   .group{
+      margin-bottom: 40px;
+      &__name{
+        color: #fff;
+        font-size: 15px;
+      }
+      &__message{
+        color: #fff;
+        font-size: 11px;
+        margin-top: 5px;
+      }
+   }
+}
+
+.chat{
+  width: calc(100% - 300px);
+  .header{
+    box-sizing: border-box;
+    height: 100px;
+    padding: 0 40px;
+  }
+}
+
+.header-left{
+  display: inline-block;
+  &__title{
+  color: #333;
+  font-size: 20px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  }
+  &__list{
+  color: #999;
+  font-size: 12px;
+  margin-top: 15px
+  }
+  &__each-member{
+    color: #999;
+   font-size: 12px;
+    }
+  }
+
+.header-right__edi a {
+  border: 1px solid #38AEF0;
+  color: #38AEF0!important;
+  position: absolute; top: 0px;right: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 28px;
+  padding: 0 20px;
+ }
+
+.messages{
+  background-color: #FAFAFA;
+  box-sizing: border-box;
+  height: calc(100vh - 100px - 90px);
+  overflow: scroll;
+  padding: 46px 40px 0;
+ }
+.message{
+    padding-bottom: 40px;
+    a{
+      color: #999999;
+      font-size: 12px;
+      margin-left: 10px;
+ }
+&__upper{
+      margin-bottom: 10px;
+      display: flex;
+ }
+&__members{
+      color: #434a54;
+      font-size: 16px;
+      font-weight: bold;
+ }
+&__chat{
+      color: #434a54;
+      font-size: 14px;
+      margin-bottom: 10px;
+ }
+}
+ 
+ .form{
+  background-color: #DDDDDD;
+  box-sizing: border-box;
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+  &__text{
+    border: none;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    padding: 0 10px;
+    width: calc(100% - 150px);
+  }
+  &__message{
+    border: none;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    width: calc(100% - 150px);
+  }
+  &__mask{
+    background-color: #fff;
+    float: left;
+    height: 50px;
+    padding-right: 10px;
+    &__image{
+      display:block;
+      font-size: 20px;
+      line-height: 50px;
+    }
+    .hidden{
+      display: none;
+    }
+    .icon{
+      display:block;
+      font-size: 20px;
+      line-height: 50px;
+    }
+  }
+&__submit{
+   line-height: 50px;
+    background-color: #38AEF0;
+    border: none;
+    color: #fff;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+}
+}
