@@ -30,7 +30,7 @@ $(function() {
     search_list.append(html);
   }
 
-  $(function(){
+  $(document).on('turbolinks:load', function(){
     $("#user-search-field").on("keyup", function() {
       var input = $(this).val();
 
