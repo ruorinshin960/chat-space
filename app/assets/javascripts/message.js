@@ -67,10 +67,11 @@ $(function() {
   var reloadMessages = function() {
 
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      var last_message_id = $('.message:last').data(data-id);
+      var last_message_id = $('.message:last').data("message-id");
+
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
-      url:'/api/messages',
+      url:'api/messages',
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
@@ -85,8 +86,7 @@ $(function() {
       //メッセージを追加
       $('.messages').append(insertHTML);
     })
-
-    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fast');
       })
     
     .fail(function() {
